@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Referral AI Platform</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>Referral AI Platform</h1>
+    <div id="login">
+      <h2>Login</h2>
+      <label>
+        Role:
+        <select id="role">
+          <option value="family">Family Doctor</option>
+          <option value="specialist">Specialist</option>
+        </select>
+      </label>
+      <label>
+        Name:
+        <input id="name" type="text" />
+      </label>
+      <label id="specialtyField" class="hidden">
+        Specialty (for specialists):
+        <input id="specialty" type="text" />
+      </label>
+      <label>
+        Location:
+        <input id="location" type="text" />
+      </label>
+      <label>
+        Contact:
+        <input id="contact" type="text" />
+      </label>
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <div id="specialistDashboard" class="hidden">
+      <h2>Specialist Dashboard</h2>
+      <div>
+        <label>Accepting new patients:
+          <input id="accepting" type="checkbox" />
+        </label>
+      </div>
+      <div class="wait-times">
+        <label>Urgent wait (days):
+          <input type="number" id="urgent" />
+        </label>
+        <label>Routine wait (days):
+          <input type="number" id="routine" />
+        </label>
+        <label>Consult wait (days):
+          <input type="number" id="consult" />
+        </label>
+      </div>
+      <div>
+        <textarea id="notes" placeholder="Notes"></textarea>
+      </div>
+      <button id="saveSpecialist">Save</button>
+    </div>
+
+    <div id="familyDashboard" class="hidden">
+      <h2>Family Doctor Dashboard</h2>
+      <div class="filters">
+        <label>Specialty:
+          <input type="text" id="filterSpecialty" />
+        </label>
+        <label>Location:
+          <input type="text" id="filterLocation" />
+        </label>
+        <label>Sort by:
+          <select id="sortBy">
+            <option value="wait">Shortest wait</option>
+            <option value="location">Location</option>
+            <option value="specialty">Specialty</option>
+          </select>
+        </label>
+        <button id="applyFilters">Apply</button>
+      </div>
+      <table id="specialistList">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Wait Times (U/R/C)</th>
+            <th>Accepting</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

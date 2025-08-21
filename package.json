@@ -1,0 +1,8 @@
+{
+  "name": "referral-ai-platform",
+  "version": "0.1.0",
+  "description": "MVP for specialist wait time dashboard",
+  "scripts": {
+    "test": "echo \"No tests specified\""
+  }
+}
